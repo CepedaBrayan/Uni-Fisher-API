@@ -1,15 +1,26 @@
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
-  hooks:
-  - id: trailing-whitespace
-  - id: end-of-file-fixer
-  - id: check-yaml
-- repo: https://github.com/pre-commit/mirrors-black
-  rev: v20.8b1
-  hooks:
-  - id: black
-- repo: https://github.com/pre-commit/mirrors-flake8
-  rev: v4.0.0
-  hooks:
-  - id: flake8
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        language_version: python3.8
+        args:
+          - app
+  # up containers with docker-compose and run tests
+  - repo: local
+    hooks:
+      - id: docker pytest
+        name: docker pytest
+        entry: bash -c "cd .docker && docker-compose run app pytest"
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [commit]
+        verbose: true
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.1.1
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: []
+ 
