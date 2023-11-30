@@ -1,10 +1,9 @@
 FROM python:3.10-slim-buster
 
 RUN apt-get update && \
-    apt-get install -y libpq-dev gcc && \
     apt-get install -y make
 
-WORKDIR /app
+WORKDIR /src
 
 EXPOSE 8080
 
