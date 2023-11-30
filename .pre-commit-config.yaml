@@ -6,6 +6,17 @@ repos:
         language_version: python3.8
         args:
           - app
+  # up containers with docker-compose and run flake8
+  - repo: local
+    hooks:
+      - id: docker flake8
+        name: docker flake8
+        entry: bash -c "cd .docker && docker-compose run app flake8"
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [commit]
+        verbose: true
   # up containers with docker-compose and run tests
   - repo: local
     hooks:
