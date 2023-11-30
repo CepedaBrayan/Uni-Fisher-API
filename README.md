@@ -1,45 +1,45 @@
-# EMAIL EVENT CATCHER
+# UNI FISHER API
 
 ## Overview
 
-This project is developed using [FastAPI](https://fastapi.tiangolo.com/), Docker, SQLAlchemy, Alembic, and PostgreSQL.
+Application to scrape university cut scores via API REST.
 
 ### Architecture
 
-The choice of tools and technologies for this project is driven by specific requirements. FastAPI is chosen for its efficiency in creating REST APIs quickly. PostgreSQL, a relational database, is selected to establish relationships between customers, emails, products, and events.
+This project is developed using [FastAPI](https://fastapi.tiangolo.com/) and Docker by far.
+The choice of tools and technologies for this project is driven by specific requirements. FastAPI is chosen for its efficiency in creating REST APIs quickly, its performance, and its ease of use. Docker is chosen for its ease of use and its ability to create a portable environment for the project.
 
 ## Getting Started
 
 Follow these steps to set up and run the project:
 
-1. Extract the project from the provided archive.
-2. Open Docker Desktop (compatible with macOS and Windows).
-3. Open a terminal in the project's root path and run the following commands:
+1. Clone the repository.
+2. Open Docker Desktop (compatible with macOS and Windows) or Docker Engine (compatible with Linux) and ensure that it is running.
+3. Open a terminal into .docker folder and run the following commands:
 
 ```bash
 docker-compose build
 docker-compose up
 ```
 
-4. Open a browser and navigate to http://localhost:8000/docs to access the API documentation.
+4. Open a browser and navigate to http://localhost:8080/docs to access the API documentation and play with the API.
 
 
 # Testing
 
-Testing is done using [pytest](https://docs.pytest.org/en/stable/). The test cases are located in the `test` folder.
+Testing is done using [pytest](https://docs.pytest.org/en/stable/). The test files are located in the `test` folder.
 
-## Test Details
-
-The tests are designed as follows:
-
-- **Test Data:** Utilizing the provided .json examples to create comprehensive testing cases.
-- **Objective:** Each test is intended to achieve a response code of 200 for the JSON payload sent to the POST endpoint.
 
 ## Running Tests
 
 To run the tests, follow these steps:
 
-1. Create a bash session into the container:
+1. Up the application:
+
+    ```bash
+    docker-compose up
+    ```
+1. Open a terminal into the .docker folder and create a bash session:
 
     ```bash
     docker-compose exec backend bash
@@ -51,6 +51,8 @@ To run the tests, follow these steps:
     pytest
     ```
 
-Basically i took the .json examples that you sent me for creating the testing cases, so, this test hopes to get response code 200 for each json as a payload for the post endpoint.
+## Support
+
+If you have any questions or issues, please contact me at [gmail](mailto: riveracepedabrayan@gmail.com). If you want to contribute, please open a pull request. Any sponsorship is welcome.
 
 
