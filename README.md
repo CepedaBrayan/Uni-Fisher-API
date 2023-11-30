@@ -21,7 +21,7 @@ docker-compose build
 docker-compose up
 ```
 
-4. Open a browser and navigate to http://localhost:8080/docs to access the API documentation.
+4. Open a browser and navigate to http://localhost:8000/docs to access the API documentation.
 
 
 # Testing
