@@ -42,7 +42,7 @@ To run the tests, follow these steps:
 1. Open a terminal into the .docker folder and create a bash session:
 
     ```bash
-    docker-compose exec backend bash
+    docker-compose exec app bash
     ```
 
 2. Run pytest:
