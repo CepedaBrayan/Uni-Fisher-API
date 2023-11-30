@@ -7,10 +7,11 @@ WORKDIR /src
 
 EXPOSE 8080
 
-COPY requirements.txt /tmp/requirements.txt
+COPY ../requirements /tmp/requirements
 
-RUN pip install --no-cache-dir --upgrade -r /tmp/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /tmp/requirements/base.txt && \
+    pip install --no-cache-dir --upgrade -r /tmp/requirements/dev.txt
 
-COPY . /app
+COPY . . /src/
 
 CMD ["make", "start"]

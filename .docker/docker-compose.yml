@@ -1,31 +1,20 @@
 version: "3.9"
 services:
-  db:
-    image: postgres:14.1-alpine
-    restart: always
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=database
-    ports:
-      - '6500:5432'
-    volumes:
-      - db_volume:/var/lib/postgresql/data
-
-  backend:
-    depends_on:
-      - db
-    container_name: backend
+  app:
+    container_name: app
     build:
-      context: ./
-      dockerfile: Dockerfile
-    image: backend
+      context: ../
+      dockerfile: .docker/dev.Dockerfile
+    image: app
     command: "make start"
     volumes:
-      - ./:/app
+      - ../:/src
     ports:
       - "8080:8080"
     restart: "no"
 volumes:
   db_volume:
     driver: local
+
+
+
