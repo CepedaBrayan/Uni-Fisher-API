@@ -53,6 +53,7 @@ To run the tests, follow these steps:
 
 ## Support
 
-If you have any questions or issues, please contact me at [gmail](mailto: riveracepedabrayan@gmail.com). If you want to contribute, please open a pull request. Any sponsorship is welcome.
+If you have any questions or issues, feel free to reach out to me via email at [riveracepedabrayan@gmail.com](mailto:riveracepedabrayan@gmail.com). If you'd like to contribute, please open a pull request. Any sponsorship is greatly appreciated.
+
 
 
